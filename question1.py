@@ -8,9 +8,10 @@ content = file.read()
 tokens = content.split()
 cleaned_tokens = []
 
+# Clean tokens
 for token in tokens:
     token = token.lower()
-    token = token.strip(punctuation)       # remove punctuation somehow
+    token = token.strip(punctuation)
 
     count = 0
 
@@ -34,6 +35,6 @@ for word in cleaned_tokens:
 sorted_words = sorted(word_counts.items(), key=lambda x: x[1], reverse=True)
 
 for word, count in sorted_words[:10]:
-    print(f"{word}: {count}")
+    print(f"{word} -> {count}")
 
 file.close()
